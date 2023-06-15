@@ -13,9 +13,9 @@ if ans == 'phrase':
 	print("To create a passphrase, you will use memorable information.")
 	print()
 
-	pass_part1 = input("Type a memorable 5-10 letter word.        ")
+	pass_part1 = input("Type a memorable 5+ letter word.        ")
 	pass_part3 = input("Type a memorable number.(of any length)   ")
-	pass_part2 = input("Type a memorable 5-10 letter word.        ")
+	pass_part2 = input("Type a memorable 5+ letter word.        ")
 	pass_part4 = input("Type a memorable phrase.(without spaces)  ")
 
 	s1 = str(pass_part1)
