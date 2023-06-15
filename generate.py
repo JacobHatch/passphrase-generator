@@ -18,11 +18,8 @@ if ans == 'phrase':
 	pass_part2 = input("Type a memorable 5+ letter word.        ")
 	pass_part4 = input("Type a memorable phrase.(without spaces)  ")
 
-	s1 = str(pass_part1)
-	s2 = str(pass_part2)
-	i1 = str(pass_part3)
-	p1 = str(pass_part4)
-
+	s1, s2, i1, p1 = str(pass_part1), str(pass_part2), str(pass_part3), str(pass_part4)
+	
 	passphrase = ''
 
 	for stuff in range(len(s1)):
