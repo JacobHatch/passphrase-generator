@@ -120,11 +120,13 @@ if ans == 'phrase':
 if ans == 'word':
 	print()
 	print("You have chosen to have a password generated for you.")
+	length = input("How long would you like your password to be?\n(it is recommended at least 10 characters in length)\n")
+	pass_length = int(length)
+	print()
 	
-	buildrand = random.randint(15,21)
 	password = ''
 
-	for i in range(buildrand):
+	for i in range(pass_length):
 		rand = random.randint(32, 126)
 		password += chr(rand)
 
