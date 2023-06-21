@@ -26,8 +26,9 @@ int main() {
                 cout << "\nYou have chosen to create a personalized passphrase.\n";
                 cout << "To create a passphrase, you will use memorable information.\n";
 
-                string s1, s2, i1, p1, passphrase;
-
+                char s1[64], s2[64], i1[64], p1[64];
+                string passphrase;
+                
                 cout << "\nType a memorable 5+ letter word.\n";
                 cin >> s1;
                 cout << "\nType a memorable number.(of any length)\n";
@@ -37,5 +38,17 @@ int main() {
                 cout << "\nType a memorable phrase.(without spaces)\n";
                 cin >> p1;
 
+                for(int i = 0; i < strlen(s1); i++){
+
+                        char letter = s1[i];
+                        int rand = (std::rand())%2;
+
+                        if(rand == 0) {
+                                if(letter == 's') {
+                                        passphrase += '$';                              
+                                }
+                        }
+                }
+                cout << passphrase << endl;
         }
 }
