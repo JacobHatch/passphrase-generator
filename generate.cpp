@@ -1,3 +1,7 @@
+/* C++ program to create a secure pass-phrase that is also personalized and easy to
+remember. There is an option to generate a secure password that is not
+personalized but definitely secure.*/
+
 #include <iostream>
 #include <cstdlib>
 
