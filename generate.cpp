@@ -1,3 +1,5 @@
+// THIS IS INTENDED TO GENERATE A PASSPHRASE/PASSWORD TO BE MANUALLY ENTERED 
+
 /* C++ program to create a secure pass-phrase that is also personalized and easy to
 remember. There is an option to generate a secure password that is not
 personalized but definitely secure.*/
@@ -168,5 +170,23 @@ int main() {
                 }
 
                 cout << "Your passphrase is: " << passphrase << endl;
+        }
+
+        if(ans == "word"){
+
+                int pass_length;
+                string password;
+
+                cout << "You have chosen to have a password generated for you." << endl;
+                cout << "How long would you like your password to be?(it is recommended at least 10 characters in length)" << endl;
+                cin >> pass_length;
+
+                srand(time(0));
+                for(int i = 0; i < pass_length; i++){
+                        int rand = (std::rand()%(95)) + 32;
+                        password += char(rand);
+                }
+
+                cout << "Your password is: " << password << endl;
         }
 }
