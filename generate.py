@@ -6,18 +6,16 @@
 
 import random
 
-print()
-ans = input("Would you like to create a familiar passphrase or a randomly generated password?\nType 'phrase' or 'word' to choose and press enter.\n")
+ans = input("\nWould you like to create a familiar passphrase or a randomly generated password?\nType 'phrase' or 'word' to choose and press enter.\n")
 
 if ans == 'phrase':
-	print()
-	print("You have chosen to create a personalized passphrase.")
-	print("To create a passphrase, you will use memorable information.")
-	print()
+	
+	print("\nYou have chosen to create a personalized passphrase.")
+	print("To create a passphrase, you will use memorable information.\n")
 
-	pass_part1 = input("Type a memorable 5+ letter word.        ")
+	pass_part1 = input("Type a memorable 5+ letter word.          ")
 	pass_part3 = input("Type a memorable number.(of any length)   ")
-	pass_part2 = input("Type a memorable 5+ letter word.        ")
+	pass_part2 = input("Type a memorable 5+ letter word.          ")
 	pass_part4 = input("Type a memorable phrase.(without spaces)  ")
 
 	s1, s2, i1, p1 = str(pass_part1), str(pass_part2), str(pass_part3), str(pass_part4)
@@ -116,12 +114,10 @@ if ans == 'phrase':
 			else:
 				passphrase += letter.capitalize()
 	
-	print()
-	print("Your passphrase is:", passphrase)
+	print(f"\nYour passphrase is: {passphrase}\n")
 
 if ans == 'word':
-	print()
-	print("You have chosen to have a password generated for you.")
+	print("\nYou have chosen to have a password generated for you.")
 	length = input("How long would you like your password to be?\n(it is recommended at least 10 characters in length)\n")
 	pass_length = int(length)
 	print()
@@ -132,6 +128,4 @@ if ans == 'word':
 		rand = random.randint(32, 126)
 		password += chr(rand)
 
-	print()
-	print("Your password is: ", password)
-	print()
+	print(f"\nYour password is: {password}\n")
