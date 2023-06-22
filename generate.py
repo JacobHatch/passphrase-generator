@@ -1,3 +1,5 @@
+### THIS IS INTENDED FOR GENERATING PASSPHRASES/PASSWORDS TO THEN BE MANUALLY ENTERED ### 
+
 # Python program to create a secure pass-phrase that is also personalized and easy to
 # remember. There is an option to generate a secure password that is not
 # personalized but definitely secure.
