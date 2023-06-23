@@ -6,8 +6,7 @@
 ---
 ---
 ## For the passphrase:
-### The idea is to have an extremely complicated and long passphrase that is familiar to you using memorable information
-that is further secured by changing characters to symbols and numbers.
+### The idea is to have an extremely complicated and long passphrase that is familiar to you using memorable information that is further secured by changing characters to symbols and numbers.
 ---
 ---
 ## For the password:
