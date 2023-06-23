@@ -12,6 +12,8 @@ personalized but definitely secure.*/
 
 using namespace std;
 
+string secure_item(char item[]);
+
 int main() {
 
         string ans;
@@ -40,136 +42,12 @@ int main() {
                 cout << "\nType a memorable phrase.(without spaces)\n";
                 cin >> p1;
 
-                srand(time(0));
-                for(int i = 0; i < strlen(s1); i++){
+		passphrase += secure_item(s1);
+		passphrase += i1;
+		passphrase += secure_item(p1);
+		passphrase += secure_item(s2);
 
-                        char letter = s1[i];
-                        int rand = (std::rand())%2;
-
-                        if(rand == 0) {
-                                if(letter == 's') {
-                                        passphrase += '$';                              
-                                }else if(letter == 'i'){
-                                        passphrase += '!';
-                                }else if(letter == 'b'){
-                                        passphrase += '8';
-                                }else if(letter == 'e'){
-                                        passphrase += '3';
-                                }else{
-                                        passphrase += toupper(letter);
-                                }
-                        }
-                        if(rand == 1){
-                                passphrase += letter;
-                        }
-                        if(rand == 2){
-                                if(letter == 'i'){
-                                        passphrase += '1';
-                                }else if(letter == 's'){
-                                        passphrase += '5';
-                                }else if(letter == 'p'){
-                                        passphrase += '9';
-                                }else if(letter == 'e'){
-                                        passphrase += '=';
-                                }else if(letter == 'o'){
-                                        passphrase += '0';
-                                }else if(letter == 'l'){
-                                        passphrase += '1';
-                                }else if(letter == 'b'){
-                                        passphrase += '8';
-                                }else{
-                                        passphrase += toupper(letter);
-                                }
-                        }
-                }
-
-                passphrase += i1;
-
-                for(int i = 0; i < strlen(p1); i++){
-
-                        char letter = p1[i];
-                        int rand = (std::rand())%3;
-
-                        if(rand == 0){
-                                if(letter == 's'){
-                                        passphrase += '$';
-                                }else if(letter == 'i'){
-                                        passphrase += '!';
-                                }else if(letter == 'b'){
-                                        passphrase += '8';
-                                }else if(letter == 'e'){
-                                        passphrase += '3';
-                                }else{
-                                        passphrase += toupper(letter);
-                                }
-                        }
-                        if(rand == 1){
-                                passphrase += letter;
-                        }
-                        if(rand == 2){
-                                if(letter == 'i'){
-                                        passphrase += '1';
-                                }else if(letter == 's'){
-                                        passphrase += '5';
-                                }else if(letter == 'p'){
-                                        passphrase += '9';
-                                }else if(letter == 'e'){
-                                        passphrase += '=';
-                                }else if(letter == 'o'){
-                                        passphrase += '0';
-                                }else if(letter == 'l'){
-                                        passphrase += '1';
-                                }else if(letter == 'b'){
-                                        passphrase += '8';
-                                }else{
-                                        passphrase += toupper(letter);
-                                }
-                        }
-                }
-
-                for(int i = 0; i < strlen(s2); i++){
-
-                        char letter = s2[i];
-                        int rand = (std::rand())%3;
-
-                        if(rand == 0){
-                                if(letter == 's'){
-                                        passphrase += '$';
-                                }else if(letter == 'i'){
-                                        passphrase += '!';
-                                }else if(letter == 'b'){
-                                        passphrase += '8';
-                                }else if(letter == 'e'){
-                                        passphrase += '3';
-                                }else{
-                                        passphrase += toupper(letter);
-                                }
-                        }
-                        if(rand == 1){
-                                passphrase += letter;
-                        }
-                        if(rand == 2){
-                                if(letter == 'i'){
-                                        passphrase += '1';
-                                }else if(letter == 's'){
-                                        passphrase += '5';
-                                }else if(letter == 'p'){
-                                        passphrase += '9';
-                                }else if(letter == 'e'){
-                                        passphrase += '=';
-                                }else if(letter == 'o'){
-                                        passphrase += '0';
-                                }else if(letter == 'l'){
-                                        passphrase += '1';
-                                }else if(letter == 'b'){
-                                        passphrase += '8';
-                                }else{
-                                        passphrase += toupper(letter);
-                                }
-                        }
-                }
-
-                cout << "Your passphrase is: " << passphrase << endl;
+                cout << "\nYour passphrase is: " << passphrase << endl;
         }
 
         if(ans == "word"){
@@ -177,8 +55,8 @@ int main() {
                 int pass_length;
                 string password;
 
-                cout << "You have chosen to have a password generated for you." << endl;
-                cout << "How long would you like your password to be?(it is recommended at least 10 characters in length)" << endl;
+                cout << "\nYou have chosen to have a password generated for you." << endl;
+                cout << "How long would you like your password to be?(it is recommended at least 10 characters in length)\n" << endl;
                 cin >> pass_length;
 
                 srand(time(0));
@@ -187,6 +65,54 @@ int main() {
                         password += char(rand);
                 }
 
-                cout << "Your password is: " << password << endl;
+                cout << "\nYour password is: " << password << endl;
         }
+}
+
+string secure_item(char item[]){
+
+		string passphrase;
+		srand(time(0));
+                for(int i = 0; i < strlen(item); i++){
+
+                        char letter = item[i];
+                        int rand = (std::rand())%3;
+
+                        if(rand == 0){
+                                if(letter == 's'){
+                                        passphrase += '$';
+                                }else if(letter == 'i'){
+                                        passphrase += '!';
+                                }else if(letter == 'b'){
+                                        passphrase += '8';
+                                }else if(letter == 'e'){
+                                        passphrase += '3';
+                                }else{
+                                        passphrase += toupper(letter);
+                                }
+                        }
+                        if(rand == 1){
+                                passphrase += letter;
+                        }
+                        if(rand == 2){
+                                if(letter == 'i'){
+                                        passphrase += '1';
+                                }else if(letter == 's'){
+                                        passphrase += '5';
+                                }else if(letter == 'p'){
+                                        passphrase += '9';
+                                }else if(letter == 'e'){
+                                        passphrase += '=';
+                                }else if(letter == 'o'){
+                                        passphrase += '0';
+                                }else if(letter == 'l'){
+                                        passphrase += '1';
+                                }else if(letter == 'b'){
+                                        passphrase += '8';
+                                }else{
+                                        passphrase += toupper(letter);
+                                }
+                        }
+                }
+		return passphrase;
 }
