@@ -8,6 +8,40 @@ import random
 
 ans = input("\nWould you like to create a familiar passphrase or a randomly generated password?\nType 'phrase' or 'word' to choose and press enter.\n")
 
+def secure_item(item):
+
+	passphrase = ''
+	for stuff in range(len(item)):
+		letter = item[stuff]
+		rand = random.randint(0,2)
+		if rand == 0:
+			if letter == 's':
+				passphrase += '$'
+			elif letter == 'i':
+				passphrase += '!'
+			else:
+				passphrase += letter.capitalize()
+		if rand == 1:
+			passphrase += letter
+		if rand == 2:
+			if letter == 'i':
+				passphrase += '1'
+			elif letter == 's':
+				passphrase += '5'
+			elif letter == 'p':
+				passphrase += '9'
+			elif letter == 'e':
+				passphrase += '3'
+			elif letter == 'o':
+				passphrase += '0'
+			elif letter == 'l':
+				passphrase += '1'
+			elif letter == 'b':
+				passphrase += '8'
+			else:
+				passphrase += letter.capitalize()
+	return passphrase
+	
 if ans == 'phrase':
 	
 	print("\nYou have chosen to create a personalized passphrase.")
@@ -22,97 +56,10 @@ if ans == 'phrase':
 	
 	passphrase = ''
 
-	for stuff in range(len(s1)):
-		letter = s1[stuff]
-		rand = random.randint(0,2)
-		if rand == 0:
-			if letter == 's':
-				passphrase += '$'
-			elif letter == 'i':
-				passphrase += '!'
-			else:
-				passphrase += letter.capitalize()
-		if rand == 1:
-			passphrase += letter
-		if rand == 2:
-			if letter == 'i':
-				passphrase += '1'
-			elif letter == 's':
-				passphrase += '5'
-			elif letter == 'p':
-				passphrase += '9'
-			elif letter == 'e':
-				passphrase += '3'
-			elif letter == 'o':
-				passphrase += '0'
-			elif letter == 'l':
-				passphrase += '1'
-			elif letter == 'b':
-				passphrase += '8'
-			else:
-				passphrase += letter.capitalize()
-
+	passphrase += secure_item(s1)
 	passphrase += i1
-
-	for stuff in range(len(p1)):
-		letter = p1[stuff]
-		rand = random.randint(0,2)
-		if rand == 0:
-			if letter == 's':
-				passphrase += '$'
-			elif letter == 'i':
-				passphrase += '!'
-			else:
-				passphrase += letter.capitalize()
-		if rand == 1:
-			passphrase += letter
-		if rand == 2:
-			if letter == 'i':
-				passphrase += '1'
-			elif letter == 's':
-				passphrase += '5'
-			elif letter == 'p':
-				passphrase += '9'
-			elif letter == 'e':
-				passphrase += '3'
-			elif letter == 'o':
-				passphrase += '0'
-			elif letter == 'l':
-				passphrase += '1'
-			elif letter == 'b':
-				passphrase += '8'
-			else:
-				passphrase += letter.capitalize()
-
-	for stuff in range(len(s2)):	
-		letter = s2[stuff]
-		rand = random.randint(0,2)
-		if rand == 0:
-			if letter == 's':
-				passphrase += '$'
-			elif letter == 'i':
-				passphrase += '!'
-			else:
-				passphrase += letter.capitalize()
-		if rand == 1:
-			passphrase += letter
-		if rand == 2:
-			if letter == 'i':
-				passphrase += '1'
-			elif letter == 's':
-				passphrase += '5'
-			elif letter == 'p':
-				passphrase += '9'
-			elif letter == 'e':
-				passphrase += '3'
-			elif letter == 'o':
-				passphrase += '0'
-			elif letter == 'l':
-				passphrase += '1'
-			elif letter == 'b':
-				passphrase += '8'
-			else:
-				passphrase += letter.capitalize()
+	passphrase += secure_item(p1)
+	passphrase += secure_item(s2)
 	
 	print(f"\nYour passphrase is: {passphrase}\n")
 
