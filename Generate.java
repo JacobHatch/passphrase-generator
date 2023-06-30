@@ -83,21 +83,21 @@ class Generate{
 			}
 	}
 
-	//This function takes a word or phrase without spaces as a parameter and returns a new, similar version of that word or phrase that has letters replaced with capital letters, numbers, or symbols.
+	//This function takes a word or phrase without spaces as a parameter and returns a new, similar version of that word or phrase that has it letters replaced with capital letters, numbers, or symbols.
 	//Special note on the fact that these replacement characters are chosen to still look similar to the original word or phrase to keep its familiarity.
 	//Requires: The input of a String. 
 	//Assignable: NONE
 	//Ensures: The return of a String that is similar version of the original character array that has been secured.
 	public static String secureItem(String item){
 
-				//Inititialization of: passphrase to be returned,,,index to keep track of substrting location,,,random number,,,random seed to ensure different number every time program is used
+				//Inititialization of: passphrase to be returned,,,index to keep track of substring location,,,random number,,,random seed to ensure different number every time program is used
 				String passphrase = "";
 				int index = 0;
 				Random rand = new Random();
 				long seed = rand.nextLong();
 				rand.setSeed(seed);
 
-				//This loop iterates through the input string, changing each character to either the same character, a capatilized character, a similar number or similar symbol
+				//This loop iterates through the input string, changing each character to either the same character, a capatilized character, a similar number, or a similar symbol
 				for(int i = 0; i < item.length(); i++){
 					
 					String letter = item.substring(index, i+1);
