@@ -12,19 +12,26 @@ personalized but definitely secure.*/
 
 using namespace std;
 
+//Initialization of function that will mutate the familiar words and phrase.
 string secure_item(char item[]);
 
 int main() {
 
+	//Initialize and accept, as user input, the choice of whether to create a familiar passphrase or a randomly generated password.
         string ans;
         cout << "\nWould you like to create a familiar passphrase or a randomly generated password?\nType 'phrase' or 'word' to choose and press enter.\n";
         cin >> ans;
 
+	//Check that the input is valid.
         if(ans != "phrase" && ans != "word") {
                 cout << "\nCorrect usage is typing <word> or <phrase>, exiting program\n";
                 exit(0);
         }
 
+	//If creating a familiar passphrase is chosen:
+	//    Get the components of the passphrase as user input
+	//    Secure the user inputs and add them to the passphrase
+	//    Print the new secure passphrase
         if(ans == "phrase") {
 
                 cout << "\nYou have chosen to create a personalized passphrase.\n";
@@ -50,6 +57,10 @@ int main() {
                 cout << "\nYour passphrase is: " << passphrase << endl;
         }
 
+	//If creating a generated password is chosen:
+	//    Recommend a proper passowrd length, initialize that length, and get the length as user input
+	//    Create a password of that length using the ASCII table, specifically characters available for user input
+	//    Print the new password
         if(ans == "word"){
 
                 int pass_length;
@@ -59,7 +70,9 @@ int main() {
                 cout << "How long would you like your password to be?(it is recommended at least 10 characters in length)\n" << endl;
                 cin >> pass_length;
 
+		//Created random seed to ensure new numbers each time the program is ran
                 srand(time(0));
+		//This loop loops for the password length number and randomly selects a keyboard inputtable ASCII table character, adding it to the password 
                 for(int i = 0; i < pass_length; i++){
                         int rand = (std::rand()%(95)) + 32;
                         password += char(rand);
@@ -69,10 +82,18 @@ int main() {
         }
 }
 
+//This function takes a word or phrase without spaces as a parameter and returns a new, similar version of that word or phrase that has letters replaces with capital letters, numbers, or symbols.
+//Special note on the fact that these replacement characters are chosen to still look similar to the original word or phrase too keep its familiarity.
+//Requires: The input of a character array. 
+//Assignable: NONE
+//Ensures: The return of a character array that is similar version of the original character array that has been secured.
 string secure_item(char item[]){
 
+		//Initialization of: passphrase to be returned,,,random seed to ensure a random number each program execution
 		string passphrase;
 		srand(time(0));
+
+		//This loop iterates through the input character array, changing each character to either the same character, a capitalzied character, a similar number, or a similar symbol.
                 for(int i = 0; i < strlen(item); i++){
 
                         char letter = item[i];
