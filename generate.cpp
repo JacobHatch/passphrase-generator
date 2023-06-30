@@ -12,7 +12,7 @@ personalized but definitely secure.*/
 
 using namespace std;
 
-//Initialization of function that will mutate the familiar words and phrase.
+//Initialization of function that will mutate the familiar words or phrase.
 string secure_item(char item[]);
 
 int main() {
@@ -70,7 +70,7 @@ int main() {
                 cout << "How long would you like your password to be?(it is recommended at least 10 characters in length)\n" << endl;
                 cin >> pass_length;
 
-		//Created random seed to ensure new numbers each time the program is ran
+		//Create random seed to ensure new numbers each time the program is executed
                 srand(time(0));
 		//This loop loops for the password length number and randomly selects a keyboard inputtable ASCII table character, adding it to the password 
                 for(int i = 0; i < pass_length; i++){
@@ -82,14 +82,14 @@ int main() {
         }
 }
 
-//This function takes a word or phrase without spaces as a parameter and returns a new, similar version of that word or phrase that has letters replaces with capital letters, numbers, or symbols.
-//Special note on the fact that these replacement characters are chosen to still look similar to the original word or phrase too keep its familiarity.
+//This function takes a word or phrase without spaces as a parameter and returns a new, similar version of that word or phrase that has each of its letters replaced with capital letters, numbers, or symbols.
+//Special note on the fact that these replacement characters are chosen to still look similar to the original word or phrase to keep its familiarity.
 //Requires: The input of a character array. 
 //Assignable: NONE
-//Ensures: The return of a character array that is similar version of the original character array that has been secured.
+//Ensures: The return of a character array that is a similar version of the original character array that has been secured.
 string secure_item(char item[]){
 
-		//Initialization of: passphrase to be returned,,,random seed to ensure a random number each program execution
+		//Initialization of: passphrase to be returned,,,random seed to ensure a new random number each time the program is executed
 		string passphrase;
 		srand(time(0));
 
